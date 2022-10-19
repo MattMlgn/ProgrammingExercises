@@ -19,5 +19,5 @@ def LeapYear(year):
 
 
 if __name__ == "__main__":
-    print(LeapYear(2000))
+    print(LeapYear(2032))
     print(LeapYear(1800))
