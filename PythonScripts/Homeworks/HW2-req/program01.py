@@ -34,10 +34,6 @@ NOTICE: no other libraries are allowed.
 """
 
 
-from audioop import reverse
-from typing import final
-
-
 def decode_XKCD_tuple(xkcd_values: tuple[str, ...], k: int) -> list[int]:
     '''
     Receives as arguments a list of strings representing values in the
@@ -145,10 +141,7 @@ def list_of_weights_to_number(weigths: list[int]) -> int:
             arab += weigths[i+1] - weigths[i]
             i += 1
         i += 1
-    if arab >= 0:
-        return arab
-    else:
-        return (arab * -1)
+    return arab
 
 
 ###################################################################################
@@ -157,6 +150,7 @@ if __name__ == '__main__':
     # print('10010010010100511', decode_value('10010010010100511'), '(397?)')
     #print(list_of_weights_to_number([10, 50, 1, 10]))
     # print(xkcd_to_list_of_weights("1050110"))
-    print(decode_value("1101001000"))
+    # print(decode_value("1101001000"))
     # print(decode_XKCD_tuple(
     #   ["150",  "1050110", "100100010100110", "11000", "1500", "10050010100110"], 6))
+    pass

@@ -1,0 +1,24 @@
+def list_of_weights_to_number(weigths: list[int]) -> int:
+    How  did I code this func? I Initially check if the list of weigths is in a form like [1, 10, 100, 1000] in which
+    every number is less than the next one. In that case, I reverse the list and subtract every number from the bigger one
+    so the list will be [1000, 100, 10, 1] and my difference will be 889.
+    Then I coded the rest of the function, the 'normal' cases: I check every time if an element is bigger or less than 
+    the next one (in which case I shall subtract it from the bigger one), and if it is bigger i just add it to the final called 
+    'arab' in the code. Every iteration I check if I'm at the end of the list, in which case I add the last element and
+    exit the for because of out of bound possible error.
+    
+def xkcd_to_list_of_weights(xkcd: str) -> list[int]:
+    This is the function that I'm most proud of. 
+    I Initially set a list of admitted roman values, that will help me with the check;
+    I then make two loops, a while loop and a for each loop, in the second one I check weather or not the strinx xkcd starts
+    with the current roman_num value, in such case I append to my final list that value, then i shrink my xkcd string
+    and I delete from it the first n number of chars where n is the number of digits of the value that I've just found, 
+    so the cycle starts over again.
+
+def decode_value(xkcd: str) -> int: 
+    This is just a mix of the two functions above.
+
+def decode_XKCD_tuple(xkcd_values: tuple[str, ...], k: int) -> list[int]:
+    This is the most simple one, I just decode every xkcd string in the tuple given in input, then I sort and reverse
+    the list of decoded values, and with a for I take the k-numbers of values, that will be the bigger ones.
+    
