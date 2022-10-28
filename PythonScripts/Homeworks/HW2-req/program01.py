@@ -34,6 +34,7 @@ NOTICE: no other libraries are allowed.
 """
 
 
+from audioop import reverse
 from typing import final
 
 
@@ -117,6 +118,23 @@ def list_of_weights_to_number(weigths: list[int]) -> int:
     '''
     arab = 0
     i = 0
+    strange = False
+    for index, n in enumerate(weigths):
+        if index == len(weigths)-1:
+            strange = True
+            break
+        if n < weigths[index+1]:
+            continue
+        else:
+            break
+
+    if strange:
+        weigths.reverse()
+        arab = weigths[0]
+        for nu in weigths[1:]:
+            arab -= nu
+        return arab
+
     while i < len(weigths):
         if i == len(weigths)-1:
             arab += weigths[i]
@@ -127,16 +145,18 @@ def list_of_weights_to_number(weigths: list[int]) -> int:
             arab += weigths[i+1] - weigths[i]
             i += 1
         i += 1
-
-    return arab
+    if arab >= 0:
+        return arab
+    else:
+        return (arab * -1)
 
 
 ###################################################################################
 if __name__ == '__main__':
     # add here your personal tests
     # print('10010010010100511', decode_value('10010010010100511'), '(397?)')
-    # print(list_of_weights_to_number([1, 10, 100, 1000]))
-    # print(xkcd_to_list_of_weights("1101001000"))
-    # print(decode_value("1101001000"))
+    #print(list_of_weights_to_number([10, 50, 1, 10]))
+    # print(xkcd_to_list_of_weights("1050110"))
+    print(decode_value("1101001000"))
     # print(decode_XKCD_tuple(
-    #  ["150",  "1050110", "100100010100110", "11000", "1500", "10050010100110"], 6))
+    #   ["150",  "1050110", "100100010100110", "11000", "1500", "10050010100110"], 6))
