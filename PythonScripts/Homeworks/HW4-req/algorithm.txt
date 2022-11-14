@@ -1,2 +1,9 @@
-Write here your algorithm description (no code or personal info)
-Scrivi qui la descrizione del tuo algoritmo (senza codice o info personali)
+def computeFile(filename: str):
+    This function takes in input a string that contains the relative path of a file, and returns a tuple(str, [str])
+    This function simply extract the first row of the file, that we know is the nextifile's path, and a list containing
+    all the words in the file.
+
+def computeFolder(start: str) -> list[str]:
+    This function takes in input a string that represent the starting file of the test, and returns a list containing
+    all the words of all the files in the starting folder, using a loop and the previous function.
+
