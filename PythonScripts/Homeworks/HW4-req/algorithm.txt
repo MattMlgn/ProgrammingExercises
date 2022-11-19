@@ -1,9 +1,16 @@
 def computeFile(filename: str):
     This function takes in input a string that contains the relative path of a file, and returns a tuple(str, [str])
-    This function simply extract the first row of the file, that we know is the nextifile's path, and a list containing
+    This function simply extract the first row of the file, that we know is the next file's path, and a list containing
     all the words in the file.
 
 def computeFolder(start: str) -> list[str]:
     This function takes in input a string that represent the starting file of the test, and returns a list containing
     all the words of all the files in the starting folder, using a loop and the previous function.
 
+def mostFrequent(lst: list[str]) -> str:
+    This is a function that uses a dictionary approach to find the most frequent char in a list.
+
+def most_frequent_chars(filename: str) -> str:
+    This is the main function, that uses all the other functions, basically the functions computes the folder of the 
+    starting file, using the computeFolder() func. Then tries to find the most frequent char in every position of the words
+    using a for loop that iterate for the length of the bigger word.  
